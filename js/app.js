@@ -1,6 +1,18 @@
 
+var url = window.location.href;
+var swLocation = '/twittor/sw.js';
+
+
+// if ( navigator.serviceWorker ) {
+//     var swLocation = '/sw.js';
+//     navigator.serviceWorker.register( swLocation );
+// }
+
+
 if ( navigator.serviceWorker ) {
-    var swLocation = '/sw.js';
+    if ( url.includes('localhost') ) {
+        swLocation = '/sw.js';
+    }
     navigator.serviceWorker.register( swLocation );
 }
 
